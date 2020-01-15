@@ -16,18 +16,18 @@
 #include <string>
 using namespace std;
 
-int getNumber()
+int getNumber()                 //Reads console input and converts it to a double
 {
     string str;
     double num;
 
     getline(cin, str);
-    try
+    try                         //Checks if number can be converted into double
     {
         num = stod(str);
         return num;
     }
-    catch (exception)
+    catch (exception)           //Otherwise, the console requests another attempt at typing in only a number
     {
         cout << "Invalid input detected. Please only enter numbers" << endl;
         return getNumber();
@@ -38,9 +38,9 @@ int main()
 {
     
     
-    double x;
-    double y;
-    double z;
+    double x; //Length
+    double y; //Width
+    double z; //Height
 
     cout << "Hello, and welcome to the Fish-O-Matic fish tank conditioner dispenser\nEnter the length(in inches) of your fish tank you will be conditioning today" << endl;
     x = getNumber();
@@ -49,9 +49,9 @@ int main()
     cout << "Now type in the height(in inches) of the fish tank" << endl;
     z = getNumber();
 
-    ofstream outFile("Results.txt");
+    ofstream outFile("Results.txt"); //Prints off results into file to be read
     outFile << "You need " << (x * y * z)/100 << " ml of conditioner for a tank with the dimensions of " << x << "in. x " << y << "in. x " << z << "in.";
-    
+
     cout << "The amount of required conditioner has been saved in \"Results.txt\"\nPress enter to close this program" << endl;
     getNumber();
 
