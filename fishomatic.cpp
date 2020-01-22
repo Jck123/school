@@ -49,10 +49,10 @@ int main()
     cout << "Now type in the height(in inches) of the fish tank" << endl;
     z = getNumber();
 
-    ofstream outFile("Results.txt"); //Prints off results into file to be read
+    ofstream outFile("conditioner.txt"); //Prints off results into file to be read
     outFile << "You need " << (x * y * z)/100 << " ml of conditioner for a tank with the dimensions of " << x << "in. x " << y << "in. x " << z << "in.";
 
-    cout << "The amount of required conditioner has been saved in \"Results.txt\"\nPress enter to close this program" << endl;
+    cout << "The amount of required conditioner has been saved in \"conditioner.txt\"\nPress enter to close this program" << endl;
     getNumber();
 
     outFile.close();
