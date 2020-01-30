@@ -1,3 +1,1 @@
 #schoolshit
-
-Welcome to the schoolshit repository,  this is just my little repo I use to keep my projects for school synced up between my desktop and laptop without using a flash drive. It certainly makes things easier since I always remember to click the button when I am done working that uploads everything online, yet I always will forget to bring my flash drive somewhere like back when I was in high school.
