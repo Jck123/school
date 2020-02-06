@@ -13,7 +13,14 @@
 #include <cstdlib>      //For rand()
 #include <ctime>        //For srand(time(NULL))
 #include <iomanip>      //For setprecision()
+#include <string>
 using namespace std;
+
+float round(float var)  //Rounds to the nearest two decimal places
+{  
+    float value = (int)(var * 100 + .5); 
+    return (float)value / 100; 
+} 
 
 char restaurant(double &orderPrice, int &orderTotal)
 {
@@ -44,7 +51,7 @@ char restaurant(double &orderPrice, int &orderTotal)
         restaurant(orderPrice, orderTotal);
         break;
     case 'T':                               //Calculates total with 6% sales tax
-        cout << "You have ordered " << orderTotal << " items and your total is: $" << setprecision(4) << orderPrice * 1.06 << endl;
+        cout << "You have ordered " << orderTotal << " items and your total is: $" << round(orderPrice * 1.06) << endl;
         break;
     default:                                //Input error
         cout << "I'm sorry, that is not a valid combo, please try again" << endl;
