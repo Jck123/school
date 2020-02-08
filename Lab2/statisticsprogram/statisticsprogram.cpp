@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main()
@@ -30,12 +31,14 @@ int main()
     int oddNum = 0;
     int oddNumSum = 0;
     int NumSum = 0;
+    int largestSum = 0;
+    string largestSumStr;
     string fileName;
     ifstream file;
 
-    //cout << "Type in the name of the file you wish to analyze: ";
-    //cin >> fileName;
-    file.open("integers.txt");
+    cout << "Type in the name of the file you wish to analyze: ";
+    cin >> fileName;
+    file.open(fileName);
 
     while(true)
     {
@@ -62,11 +65,16 @@ int main()
             oddNumSum = oddNumSum + groupSize;
         }
 
-         
-        //cout << index << " " << groupSize << endl;
         NumSum = NumSum + groupSize;
         indexOld = index;
     }
+    largestSumStr = to_string(largestGroup);
+    for (int i = 0; i < largestSumStr.length(); i++)
+    {
+        largestSum = largestSum + largestSumStr[i] - '0';
+    }
+    
+
     cout << "The number of groups in the file is " << indexOld << endl;
     cout << "There are " << oddNum << " odd student count and " << evenNum << " even student count" << endl;
     cout << "The sum of the odd student count is " << oddNumSum << endl;
@@ -75,6 +83,6 @@ int main()
     cout << "The group number of the largest student count is " << largestGroupIndex << endl;
     cout << "The group number of the smallest student count is " << smallestGroupIndex << endl;
     cout << "The average of " << largestGroup << " and " << smallestGroup << " is " << ((double)largestGroup + (double)smallestGroup) / 2 << endl; 
-    cout << "The sum of all the digits in the largest student count is ";
+    cout << "The sum of all the digits in the largest student count is " << largestSum;
     cin >> fileName;
 }
