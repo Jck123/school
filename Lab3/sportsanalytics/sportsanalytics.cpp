@@ -32,12 +32,24 @@ int getNumberOfTwoPointsMade(string &fileName, ifstream &file)
 
 int getNumberOfThreePointsMade(string &fileName, ifstream &file)
 {
+    string stat;
+    int num = 0;
 
+    file.open(fileName);
+    while(file >> stat >> num)
+    {
+        if (stat == "3PM") {return num;}
+    }
 }
 
 int getTotalNumberOfShotsAttempted(string &fileName, ifstream &file)
 {
+    string stat;
+    int num;
 
+    file.open(fileName);
+    while(file >> stat >> num)
+    {}
 }
 
 double getPercentageOfTwoPointsMade(string &fileName, ifstream &file)
@@ -57,7 +69,7 @@ bool IsBetterThanChance(string &fileName, ifstream &file)
 
 int main()
 {
-    string fileName;
+    string fileName;        //You're doing it wrong, get variables from files first, then pass them to the functions
     ifstream file;
     
     cout << "Welcome to the LeBron James Museum, please enter the file you wish to analyze: ";
