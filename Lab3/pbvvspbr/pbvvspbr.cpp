@@ -4,8 +4,9 @@
 // Programmer: James Kelly                                              //
 //                                                                      //
 // Description:                                                         //
-//      This program takes a file of Lebron's basketball statistics     //
-//      and does calculations using functions                           //
+//      This program gives you the option between two different         //
+//      functions that you can run and the user decides when to         //
+//      stop running the program                                        //
 //////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -15,7 +16,7 @@
 
 using namespace std;
 
-string passByValue()
+string passByValue()                    //Returns string result
 {
     int randNum = rand() % 100 + 1;
     if (randNum <= 20) {return "Sorry! You're not close enough!";}
@@ -25,7 +26,7 @@ string passByValue()
     
 }
 
-int passByReference(string &output)
+int passByReference(string &output)     //Returns nothing, but sets reference variable to result
 {
     int randNum = rand() % 100 + 1;
     if (randNum <= 20) {output = "Sorry! You're not close enough!";}
@@ -36,22 +37,18 @@ int passByReference(string &output)
 
 int main()
 {
-    int num;
     string input;
     string output;
-    srand(time(0));
+    srand(time(0));     //Keeps numbers random
 
     while(true)
     {
         cout << "Which function would you like to pass? Enter '-1' to close the program" << endl;
         cout << "1: passByValue()" << endl << "2: passByReference()" << endl;
         cin >> input;
-        try
-        {
-            num = stoi(input);
-            if (num == 1) {cout << passByValue() << endl;}
-            else if (num == 2) {passByReference(output); cout << output << endl;}
-            else if (num == -1) {break;}
-        } catch (exception) {cout << "Sorry, that is not a valid input" << endl;}
+        if (input == "1") {cout << passByValue() << endl;}      //Checks if value is one of the options
+        else if (input == "2") {passByReference(output); cout << output << endl;}
+        else if (input == "-1") {break;}
+        else {cout << "Sorry, that is not a valid input" << endl;}
     }
 }
