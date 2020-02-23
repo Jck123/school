@@ -4,9 +4,8 @@
 // Programmer: James Kelly                                              //
 //                                                                      //
 // Description:                                                         //
-//      This program asks the guest to enter which hotel room they      //
-//      wish to stay in, then the program ask the guest which meal      // 
-//      combos they would like                                          //
+//      This program takes a file of Lebron's basketball statistics     //
+//      and does calculations using functions                           //
 //////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
