@@ -14,16 +14,27 @@
 #include <fstream>
 using namespace std;
 
-int arrStorage()
+int arrStorage(string &fileName)
 {
-
+    double test1;
+    double test2;
+    double test3;
+    double test4;
+    double test5;
+    string stuName;
+    ifstream stuFile;
+    stuFile.open(fileName);
+    while (stuFile >> stuName >> test1 >> test2 >> test3 >> test4 >> test5)
+    {
+        
+    }
 }
 
 int main()
 {
     string fileName;
-    ifstream stuFile;
+    string Names[1];
+    int Grades[1][1];
     cout << "Welcome to the Student Grade Analysis program, please enter the name of the file you wish to analyze." << endl;
     cin >> fileName;
-    stuFile.open(fileName);
 }
