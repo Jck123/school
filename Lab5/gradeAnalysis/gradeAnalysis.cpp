@@ -26,6 +26,7 @@ int arrStorage(string &fileName)
     string stuName;
     ifstream stuFile;
     stuFile.open(fileName);
+
     while (!stuFile.eof())
     {
         getline(stuFile, stuName);
@@ -33,7 +34,8 @@ int arrStorage(string &fileName)
     }
     stuFile.close();
     stuFile.open(fileName);
-    string stuNames[stuCount];
+
+    string *stuNames[stuCount];
     double stuGrades[stuCount][5];
     while (stuFile >> stuName >> test1 >> test2 >> test3 >> test4 >> test5)
     {
@@ -45,6 +47,14 @@ int arrStorage(string &fileName)
         stuGrades[index][4] = test5;
         index++;
     }
+    string stuN = &stuNames;
+    int stuG = &stuGrades;
+    arrAverage(stuN, stuG);
+}
+
+int arrAverage(string stuN, int stuG)
+{
+    string stuNames[] = stuN;
 }
 
 int main()
