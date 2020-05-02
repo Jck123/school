@@ -7,11 +7,20 @@
 //      This file uses matrix.h and matrixDriver.h and displays         //
 //      their functionality                                             //
 //////////////////////////////////////////////////////////////////////////
-#include "matrix.h"
 #include "matrixDriver.h"
+using namespace std;
 
 int main()
 {
-    Matrix mat;
+    Matrix mat(2, 3);
+    Matrix mat2(3, 2);
+    mat.displayMatrix();
+    mat.setColumnSize(2);
+    mat.displayMatrix();
+    mat.setRowSize(3);
+    mat.displayMatrix();
+    mat.addValue(3);
+    mat.displayMatrix();
+    mat.addValue(6);
     mat.displayMatrix();
 }

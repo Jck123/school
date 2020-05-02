@@ -13,8 +13,8 @@
 
 Matrix::Matrix()
 {
-    cnt++;
-    srand(time(NULL));
+    //cnt++;
+    srand(time(0));
 
     row_size = maxRowSize;
     col_size = maxColSize;
@@ -30,10 +30,10 @@ Matrix::Matrix()
 
 Matrix::Matrix(int row, int column)
 {
-    if (row > maxRowSize || column > maxColSize)
+    if (row <= maxRowSize && column <= maxColSize)
     {
-        cnt++;
-        srand(time(NULL));
+        //cnt++;
+        srand(time(0));
 
         row_size = row;
         col_size = column;
@@ -45,12 +45,12 @@ Matrix::Matrix(int row, int column)
                 matrix[i][j] = rand() % 10 + 1;
             }
         }
-    }
+    } else { std::cout << "Sorry, matrix can only be as large as 5x5" << std::endl; }
 }
 
 void Matrix::setRowSize(int x)
 {
-    double matrix1[x][col_size];     //Placeholder for old matrix, deleted once new matrix made and function is complete
+    double matrix1[x - 1][col_size];     //Placeholder for old matrix, deleted once new matrix made and function is complete
     for (int i = 0; i <= row_size - 1; i++)
     {
         for (int j = 0; j <= col_size - 1; j++)
@@ -62,7 +62,8 @@ void Matrix::setRowSize(int x)
     {
         for (int j = 0; j <= col_size - 1; j++)
         {
-            matrix[i][j] = matrix1[i][j];
+            if (matrix1[i][j] < 0.01 && matrix1[i][j] > -0.01) { matrix[i][j] = 0; }
+            else { matrix[i][j] = matrix1[i][j]; }
         }
     }
     row_size = x;
@@ -70,7 +71,7 @@ void Matrix::setRowSize(int x)
 
 void Matrix::setColumnSize(int x)
 {
-    double matrix1[row_size][x];                //Placeholder for old matrix, deleted once new matrix made and function is complete
+    double matrix1[row_size][x - 1];                //Placeholder for old matrix, deleted once new matrix made and function is complete
     for (int i = 0; i <= row_size - 1; i++)
     {
         for (int j = 0; j <= col_size - 1; j++)
@@ -82,7 +83,8 @@ void Matrix::setColumnSize(int x)
     {
         for (int j = 0; j <= x - 1; j++)
         {
-            matrix[i][j] = matrix1[i][j];
+            if (matrix1[i][j] < 0.01 && matrix1[i][j] > -0.01) { matrix[i][j] = 0; }
+            else { matrix[i][j] = matrix1[i][j]; }
         }
     }
     col_size = x;
@@ -105,7 +107,7 @@ void Matrix::addValue(double x)
 
 int Matrix::getCnt()
 {
-    return cnt;
+    //return cnt;
 }
 
 int Matrix::getRowSize()
@@ -125,9 +127,9 @@ void Matrix::displayMatrix()
         std::cout << "[   ";
         for (int j = 0; j <= col_size - 1; j++)
         {
-            std::cout << matrix[i][j] << "     ";
+            std::cout << matrix[i][j] << "   ";
         }
-        std::cout << "  ]" << std::endl;
+        std::cout << "]" << std::endl;
     }
     std::cout << std::endl;
 }
@@ -182,16 +184,22 @@ Matrix Matrix::product(Matrix &other)
     if (col_size == other.row_size)
     {
         Matrix result(row_size, other.col_size);
-        for (int i = 0; i >= result.row_size - 1; i++)
+        for (int i = 0; i <= result.row_size - 1; i++)
         {
-            for (int j = 0; j >= result.col_size - 1; j++)
+            for (int j = 0; j <= result.col_size - 1; j++)
             {
-                for (int k = 0; k >= col_size - 1; k++)
+                result.matrix[i][j] = 0;
+                for (int k = 0; k <= col_size - 1; k++)
                 {
                     result.matrix[i][j] = result.matrix[i][j] + (matrix[i][k] * other.matrix[k][j]);
                 }
             }
         }
+        displayMatrix();
+        std::cout << "*" << std::endl;
+        other.displayMatrix();
+        std::cout << "=" << std::endl;
+        result.displayMatrix();
     } else { std::cout << "Sorry, that's not possible" << std::endl; }
 }
 
@@ -206,7 +214,7 @@ Matrix Matrix::product(double scalar)
         }
     }
     displayMatrix();
-    std::cout << "-" << std::endl;
+    std::cout << "*" << std::endl;
     std::cout << scalar << std::endl;
     std::cout << "=" << std::endl;
     result.displayMatrix();
