@@ -11,8 +11,7 @@ const int maxColSize = 5;
 
 class Matrix
 {
-    //static int cnt;
-
+    static int cnt;
     int row_size;
     int col_size;
     double matrix[maxRowSize][maxColSize];

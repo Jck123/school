@@ -13,7 +13,7 @@
 
 Matrix::Matrix()
 {
-    //cnt++;
+    cnt++;
     srand(time(0));
 
     row_size = maxRowSize;
@@ -32,7 +32,7 @@ Matrix::Matrix(int row, int column)
 {
     if (row <= maxRowSize && column <= maxColSize)
     {
-        //cnt++;
+        cnt++;
         srand(time(0));
 
         row_size = row;
@@ -107,7 +107,7 @@ void Matrix::addValue(double x)
 
 int Matrix::getCnt()
 {
-    //return cnt;
+    return cnt;
 }
 
 int Matrix::getRowSize()
