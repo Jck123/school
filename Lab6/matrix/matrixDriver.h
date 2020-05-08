@@ -11,6 +11,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+int Matrix::cnt = 0;
+
 Matrix::Matrix()
 {
     cnt++;

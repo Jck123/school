@@ -23,5 +23,5 @@ int main()
     mat.displayMatrix();
     mat.addValue(6);
     mat.displayMatrix();
-
+    cout << mat.getCnt();
 }
