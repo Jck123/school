@@ -16,7 +16,7 @@ int Matrix::cnt = 0;
 Matrix::Matrix()
 {
     cnt++;
-    srand(time(0));
+    srand(time(0)+cnt);
 
     row_size = maxRowSize;
     col_size = maxColSize;
@@ -35,7 +35,7 @@ Matrix::Matrix(int row, int column)
     if (row <= maxRowSize && column <= maxColSize)
     {
         cnt++;
-        srand(time(0));
+        srand(time(0)+cnt);
 
         row_size = row;
         col_size = column;
