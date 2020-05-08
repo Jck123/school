@@ -12,9 +12,17 @@ using namespace std;
 
 int main()
 {
-    Matrix mat(2, 3);
+    double scalar;
+    Matrix mat(3, 3);
     Matrix mat2(3, 2);
-    mat.displayMatrix();
-    mat2.displayMatrix();
-    cout << mat.getCnt();
+    Matrix mat3(3, 3);
+    mat.add(mat3);      //Same size addition
+    mat.add(mat2);      //Different size addition
+    mat.subtract(mat3); //Same size subtraction
+    mat.product(mat3);  //Same size multiplication
+    cout << "Enter a value to multiply the matrix by: ";
+    cin >> scalar;      //User input of scalar multiplication here
+    mat.product(scalar);
+    cout << "Number of matrices created: " << mat.getCnt();
+    cin >> scalar;
 }

@@ -9,7 +9,7 @@
 const int maxRowSize = 5;
 const int maxColSize = 5;
 
-class Matrix
+class Matrix            //Here's where all the functions are defined, they're all pretty self explanitory, or better explained on matrixDriver.h
 {
     static int cnt;
     int row_size;
