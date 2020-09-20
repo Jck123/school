@@ -14,7 +14,6 @@
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JButton;
 								//Note: I am using a modified version of WidgetViewer.java. I made the edit on line 161
 public class FlashCard {
 	public static void main(String[] args) {
@@ -25,7 +24,6 @@ public class FlashCard {
 		JLabel flashQuestion = new JLabel("What is " + randNum1 + " + " + randNum2);	//Asking the BIG question
 		int x;		//Placeholder for x coordinate to place answer label on
 		JTextField input = new JTextField(1);						//Creates elements for panel
-		JButton button = new JButton("Click here to check answer");
 		JLabel flashAnswer = new JLabel();
 		wv.add(flashQuestion, 95, 10, 100, 20);						//Adds elements to panel
 		wv.add(input);
