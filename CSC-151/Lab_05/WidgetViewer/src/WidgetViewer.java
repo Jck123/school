@@ -178,7 +178,7 @@ public class WidgetViewer {
 		int savedHeight = lastHeight;
 		int savedWidth = lastWidth;
 		
-		add(jcomp, 0, savedY + 20, guessAtWidth, 20);
+		add(jcomp, 0, savedY + 20, guessAtWidth, 20);	//<------ Modified code here
 		
 		// restore
 		lastUsedX = savedX;

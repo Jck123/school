@@ -12,9 +12,12 @@
 //			display result												//
 //////////////////////////////////////////////////////////////////////////
 
+//Note: This program uses a modified version of the WidgetViewer.java script.
+//Please look on line 181 of WidgetViewer.java for the changes
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-								//Note: I am using a modified version of WidgetViewer.java. I made the edit on line 161
+
 public class FlashCard {
 	public static void main(String[] args) {
 		WidgetViewer wv = new WidgetViewer(300, 150);
