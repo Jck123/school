@@ -15,7 +15,7 @@
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
+								//Note: I am using a modified version of WidgetViewer.java. I made the edit on line 161
 public class FlashCard {
 	public static void main(String[] args) {
 		WidgetViewer wv = new WidgetViewer(300, 150);
