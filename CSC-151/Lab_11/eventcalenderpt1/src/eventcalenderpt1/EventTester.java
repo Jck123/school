@@ -9,7 +9,7 @@
 //          Tests the Event class and displays results					//
 //////////////////////////////////////////////////////////////////////////
 
-package eventorganizing;
+package eventcalenderpt1;
 
 public class EventTester {
 
