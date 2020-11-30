@@ -1,3 +1,16 @@
+//////////////////////////////////////////////////////////////////////////
+// Filename: UpDownWV.java                               				//
+// Date: November 30, 2020                                            	//
+// Programmer: James Kelly												//
+// Class Section: CSC-151-0001											//
+// Instructor: Professor McGregor										//
+//                                                                      //
+// Description:                                                         //
+//          Creates the window that specifically counts either up		//
+//			or down on both labels based on which button the user		//
+//			clicked.													//
+//////////////////////////////////////////////////////////////////////////
+
 package up_down;
 
 import javax.swing.JButton;
@@ -66,5 +79,3 @@ public class UpDownWV {
 		}
 	}
 }
-
-
