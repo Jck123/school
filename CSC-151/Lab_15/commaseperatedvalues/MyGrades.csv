@@ -1,0 +1,8 @@
+Labs,50,20,=B1*C1/100
+Reading Quizzes,50,10,=B2*C2/100
+Group Work,50,10,=B3*C3/100
+Midterm,50,20,=B4*C4/100
+Project,50,15,=B5*C5/100
+Final,50,20,=B6*C6/100
+Instructor Discretion,50,5,=B7*C7/100
+average,=(D1+D2+D3+D4+D5+D6+D7)
