@@ -6,7 +6,7 @@ public class ITSC1212Lab3 {
         World w = new World(500, 500);
         Turtle tom = new Turtle(w);
         
-        //Part C
+        //Part C & D
 
         //Creates a green hexagon centered top right of tom
         tom.setPenColor(Color.green);
@@ -23,6 +23,21 @@ public class ITSC1212Lab3 {
         tom.turnRight();
         tom.setPenColor(Color.lightGray);
         tom.hexagon();
+
+        tom.setPenColor(Color.red);
+        tom.hexagon(100);
+        //Creates a cyan hexagon centered bottom right of tom
+        tom.turnRight();
+        tom.setPenColor(Color.orange);
+        tom.hexagon(100);
+        //Creates a magenta hexagon centered bottom left of tom
+        tom.turnRight();
+        tom.setPenColor(Color.blue);
+        tom.hexagon(100);
+        //Creates a light gray hexagon centered top left of tom
+        tom.turnRight();
+        tom.setPenColor(Color.black);
+        tom.hexagon(100);
 
         //Part A & B
 

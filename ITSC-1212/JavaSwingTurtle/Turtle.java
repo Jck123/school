@@ -85,4 +85,26 @@ public class Turtle extends SimpleTurtle
     this.forward(50);
     this.turn(60);
   }
+
+  public void hexagon(int size)   //Makes a hexagon sized based on input
+  {
+    //Makes first line of hexagon
+    this.forward(size);
+    //Makes second line of hexagon
+    this.turn(60);
+    this.forward(size);
+    //Makes third line of hexagon
+    this.turn(60);
+    this.forward(size);
+    //Makes fourth line of hexagon
+    this.turn(60);
+    this.forward(size);
+    //Makes fifth line of hexagon
+    this.turn(60);
+    this.forward(size);
+    //Makes sixth line of hexagon and resets direction
+    this.turn(60);
+    this.forward(size);
+    this.turn(60);
+  }
 } // this } is the end of class Turtle, put all new methods before this
