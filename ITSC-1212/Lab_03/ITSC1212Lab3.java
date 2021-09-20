@@ -1,9 +1,32 @@
+import java.awt.Color;
+
 public class ITSC1212Lab3 {
     public static void main(String[] args) {
-        //Part A & B
         
         World w = new World(500, 500);
-        Turtle tom = new Turtle(100, 250, w);
+        Turtle tom = new Turtle(w);
+        
+        //Part C
+
+        //Creates a green hexagon centered top right of tom
+        tom.setPenColor(Color.green);
+        tom.hexagon();
+        //Creates a cyan hexagon centered bottom right of tom
+        tom.turnRight();
+        tom.setPenColor(Color.cyan);
+        tom.hexagon();
+        //Creates a magenta hexagon centered bottom left of tom
+        tom.turnRight();
+        tom.setPenColor(Color.magenta);
+        tom.hexagon();
+        //Creates a light gray hexagon centered top left of tom
+        tom.turnRight();
+        tom.setPenColor(Color.lightGray);
+        tom.hexagon();
+
+        //Part A & B
+
+        /*Turtle tom = new Turtle(100, 250, w);
         tom.forward();
         //Moves tom forward 100 pixels
         tom.turn(270);
@@ -51,6 +74,8 @@ public class ITSC1212Lab3 {
         tom.turnRight();
         tom.forward();
         //Moves tom to other side of M and draws left "leg" of M
+
+        */
 
         //4
         //World w does not need any arguments because it has an empty default constructor
