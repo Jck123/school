@@ -22,6 +22,8 @@ public class RPSGame {
 	    int computerChoice = (int)(Math.random() * 3 + 1);  // Complete this line using Math.Random() to generate a int
                                                             // In the range 1-3
         playGame(choice, computerChoice);
+
+        scnr.close();
     }
 
 

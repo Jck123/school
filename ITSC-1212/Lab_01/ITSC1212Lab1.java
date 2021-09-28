@@ -26,5 +26,7 @@ public class ITSC1212Lab1 {
         System.out.println("The value entered was " + tempF);
         double tempC = (tempF - 32) * (5.0 / 9.0);
         System.out.println("The temperature in C is: " + tempC);
+
+        input.close();
     }
 }
