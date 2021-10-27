@@ -107,4 +107,11 @@ public class Turtle extends SimpleTurtle
     this.forward(size);
     this.turn(60);
   }
+
+  public void drawSquare() {
+    for (int i = 0; i < 4; i++) {
+        this.turn(90);
+        this.forward(75);
+    }
+}  
 } // this } is the end of class Turtle, put all new methods before this
