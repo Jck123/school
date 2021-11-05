@@ -1,13 +1,15 @@
 {
     "java.project.sourcePaths": [
         "JavaSwingTurtle",
-        "Lab_03",
         "Lab_01",
         "Lab_02",
+        "Lab_03",
         "Lab_04",
-        "Project_01",
         "Lab_07",
         "Lab_08",
-        "Lab_09"
+        "Lab_09",
+        "Project_01",
+        "RandomStuff/Blackjack",
+        "Project_03"
     ]
 }
