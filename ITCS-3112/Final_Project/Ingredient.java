@@ -48,7 +48,8 @@ public class Ingredient {
             galCount += (qtspCount / 1024) * .33;
             qtspCount %= 1024;
         }
-        tempUnitList.add(new Unit(galCount, 'G'));
+        if (galCount > 0)
+            tempUnitList.add(new Unit(galCount, 'G'));
 
         double cupCount = qtspCount / 192;
         qtspCount %= 192;
@@ -59,18 +60,21 @@ public class Ingredient {
             cupCount += (qtspCount / 64) * .33;
             qtspCount %= 64;
         }
-        tempUnitList.add(new Unit(cupCount, 'C'));
+        if (cupCount > 0)
+            tempUnitList.add(new Unit(cupCount, 'C'));
 
         double tbspCount = qtspCount / 12;
         qtspCount %= 12;
         tbspCount += (qtspCount / 3) * 0.25;
         qtspCount %= 3;
-        tempUnitList.add(new Unit(tbspCount, 'T'));
+        if (tbspCount > 0)
+            tempUnitList.add(new Unit(tbspCount, 'T'));
 
         double tspCount = qtspCount / 4;
         qtspCount %= 4;
         tspCount += qtspCount * 0.25;
-        tempUnitList.add(new Unit(tspCount, 't'));
+        if (tspCount > 0)
+            tempUnitList.add(new Unit(tspCount, 't'));
 
         return new Ingredient(ingredientName, tempUnitList);
     }
