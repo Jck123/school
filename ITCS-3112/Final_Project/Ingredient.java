@@ -3,6 +3,11 @@ import java.util.ArrayList;
 //TODO: Add a way to differintiate between wet and dry 
 //ingredients(3 gallons of flour?) and ingredients 
 //without units(3 eggs)
+
+//IDEA: Input at start an integer if ingredient is 
+//1: Dry ingredient 
+//2: Wet ingredient 
+//3: Solid ingredient(like eggs)
 public class Ingredient {
     private String ingredientName;
     private ArrayList<Unit> unitList = new ArrayList<Unit>();;
