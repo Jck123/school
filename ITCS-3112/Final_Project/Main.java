@@ -9,6 +9,7 @@ public class Main {
         ArrayList<Recipe> cookbook = new ArrayList<Recipe>();
         boolean programLoop = true;
 
+        /* Demo of recipe creation
         Ingredient ing1 = new Ingredient("Pre-scrambled eggs", "2C");
         Ingredient ing2 = new Ingredient("Butter", "2T");
         Ingredient ing3 = new Ingredient("Salt", "0.25t");
@@ -26,6 +27,7 @@ public class Main {
         r1.addStep(new Step[] {step1, step2, step3, step4, step5});
 
         cookbook.add(r1);
+        */
 
         System.out.println("Welcome to the Cookbook Program!");
         
