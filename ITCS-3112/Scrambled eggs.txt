@@ -1,0 +1,22 @@
+Scrambled eggs
+1
+
+Pre-scrambled eggs
+2C
+Butter
+2T
+Salt
+0.25t
+Pepper
+0.25t
+
+Put butter into pan
+N/a
+Let it melt
+30
+Pour pre-scrambled eggs into pan, pour in salt and pepper afterwards
+N/a
+Let them cook
+120
+Serve and enjoy!
+N/a
