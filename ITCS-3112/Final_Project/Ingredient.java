@@ -95,14 +95,22 @@ public class Ingredient {
         ArrayList<Unit> output = new ArrayList<Unit>();
 
         for (char c : charInput) {
-            if (Character.isLetter(c)) {
+            if (Character.isLetter(c) && !strVal.isBlank()) {
                 output.add(new Unit(Double.parseDouble(strVal), c));
                 strVal = "";
-            } else
+            } else if (Character.isDigit(c) || c == '.')
                 strVal += c;
+            else
+                throw new IllegalArgumentException("Incorrect Format");
         }
+        if (output.isEmpty())
+            throw new IllegalArgumentException("Incorrect Format");
 
         return output;
+    }
+
+    public String getName() {
+        return ingredientName;
     }
 
     public String toString() {
