@@ -10,6 +10,14 @@ public class TimerStep extends Step {
         seconds = sec;
     }
 
+    public String getText() {
+        return timerText;
+    }
+
+    public int getSec() {
+        return seconds;
+    }
+
     public void executeStep() {
         Scanner s = new Scanner(System.in);
         
@@ -40,5 +48,9 @@ public class TimerStep extends Step {
         String strSeconds = (sec > 9) ? String.valueOf(sec) : "0" + sec; 
 
         return strHours + strMinutes + ":" + strSeconds;
+    }
+
+    public String toString() {
+        return ((timerText.length() <= 20) ? timerText : timerText.substring(0, 20)) + "...\t\t" + formatTime(seconds);
     }
 }

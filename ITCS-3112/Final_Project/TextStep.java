@@ -9,6 +9,10 @@ public class TextStep extends Step {
         text = input;
     }
 
+    public String getText() {
+        return text;
+    }
+
     public void executeStep() {
         Scanner s = new Scanner(System.in);
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -17,4 +21,7 @@ public class TextStep extends Step {
         s.nextLine();
     }
 
+    public String toString() {
+        return (text.length() <= 20) ? text : text.substring(0, 20) + "...";
+    }
 }

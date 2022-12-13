@@ -5,8 +5,11 @@ public class Unit {
     private char unit;
 
     public Unit(double amt, char u) {
-        amount = amt;
-        unit = u;
+        if (u == 'G' || u == 'C' || u == 'T' || u == 't') {
+            amount = amt;
+            unit = u;
+        } else
+            throw new IllegalArgumentException("Needs to be valid unit");
     }
 
     public double getAmount() {

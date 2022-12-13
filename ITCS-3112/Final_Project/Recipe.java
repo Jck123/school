@@ -1,6 +1,9 @@
 package Final_Project;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Recipe {
     private int servings;
@@ -60,6 +63,14 @@ public class Recipe {
         servings = newServings;
     }
 
+    public ArrayList<Ingredient> getIngredients() {
+        return ingredientList;
+    }
+
+    public ArrayList<Step> getSteps() {
+        return stepList;
+    }
+
     public static String ingredientsToString(ArrayList<Ingredient> ingredients) {
         String output = "";
 
@@ -89,7 +100,7 @@ public class Recipe {
             newIngreList.add(i.convertAmount(servings, newServings));
         }
 
-        System.out.println("Please make sure you have the following ingredients:");
+        System.out.println("\n\n\n\n\n\n\n\nPlease make sure you have the following ingredients:\n");
         System.out.println(ingredientsToString(newIngreList));
         System.out.println("Press Enter to proceed through the steps...");
         sc.nextLine();
@@ -97,5 +108,73 @@ public class Recipe {
         for (Step s : stepList) {
             s.executeStep();
         }
+    }
+
+    public boolean exportRecipe() {
+        File output = new File(recipeName + ".txt");
+        if (output.exists())
+            output.delete();
+
+        try {
+            output.createNewFile();
+
+            FileWriter txtOutput = new FileWriter(output);
+
+            txtOutput.write(recipeName + "\n" + servings + "\n\n");
+            
+            for(Ingredient ing : ingredientList) {
+                txtOutput.write(ing.getName() + "\n" + ing.amountToString() + "\n");
+            }
+            txtOutput.write("\n");
+
+            for(Step s : stepList) {
+                txtOutput.write(s.getText() + "\n" + ((s.getClass().getSimpleName().compareTo("TimerStep") == 0) ? ((TimerStep)s).getSec() : "N/a") + "\n");
+            }
+
+            txtOutput.close();
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean importRecipe(File file) {
+        try {
+            Scanner input = new Scanner(file);
+
+            this.recipeName = input.nextLine();
+            this.servings = Integer.parseInt(input.nextLine());
+
+            input.nextLine();
+
+            while(true) {
+                String ingName = input.nextLine();
+                if (ingName.isBlank())
+                    break;
+
+                String ingAmount = input.nextLine();
+                
+                ingredientList.add(new Ingredient(ingName, ingAmount));
+            }
+
+            while(input.hasNextLine()) {
+                String stepText = input.nextLine();
+
+                String stepTime = input.nextLine();
+
+                Step importStep;
+                if (stepTime.compareTo("N/a") == 0)
+                    importStep = new TextStep(stepText);
+                else
+                    importStep = new TimerStep(stepText, Integer.parseInt(stepTime));
+
+                stepList.add(importStep);
+            }
+
+            input.close();
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 }
