@@ -1,3 +1,5 @@
+#James Kelly
+
 numList = list()
 
 for x in range(10):

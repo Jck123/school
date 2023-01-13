@@ -1,3 +1,5 @@
+#James Kelly
+
 listNum = int(input("Enter a number: "))
 
 numList = list()

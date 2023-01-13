@@ -1,3 +1,5 @@
+#James Kelly
+
 numList = list()
 
 while 1 == 1:

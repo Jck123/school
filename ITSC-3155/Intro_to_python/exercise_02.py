@@ -1,3 +1,5 @@
+#James Kelly
+
 str1 = input("Please enter a string: ")
 str2 = input("Please enter another string: ")
 

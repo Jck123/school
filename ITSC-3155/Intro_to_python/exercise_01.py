@@ -1,3 +1,5 @@
+#James Kelly
+
 grade = int(input("Please enter your number grade: "))
 
 if not(grade >= 0 and grade <= 100):

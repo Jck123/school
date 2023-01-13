@@ -1,3 +1,5 @@
+#James Kelly
+
 num = int(input("Enter a number greater than 1: "))
 
 if not (num > 1):

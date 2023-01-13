@@ -1,3 +1,5 @@
+#James Kelly
+
 strIn = input("Enter a string: ")
 
 bigList = list()

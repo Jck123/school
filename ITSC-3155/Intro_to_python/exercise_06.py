@@ -1,3 +1,5 @@
+#James Kelly
+
 rowNum = int(input("Enter a row num from 1 to 5: "))
 colNum = int(input("Enter a col num from 1 to 5: "))
 
