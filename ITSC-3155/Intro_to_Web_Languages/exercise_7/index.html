@@ -1,0 +1,30 @@
+<html>
+    <div style="margin-bottom: 12px;"><p1>This is a basic price calulator. Enter the value of your item and how many you're getting. Press the button and the total price will be calculated for you.</p1></div>
+    <body>
+        <input type="text" id="txt-price" placeholder="Enter the price of the item">
+        <input type="text" id="txt-quantity" placeholder="Enter the quanity of the item">
+        <button id="btn-submit">Calculate</button>
+        <div id="output"></div>
+
+        <script>
+        var priceInput = document.getElementById('txt-price');
+        var quantityInput = document.getElementById('txt-quantity');
+        var submitBtn = document.getElementById('btn-submit');
+        var output = document.getElementById('output');
+
+        submitBtn.addEventListener('click', function () {
+            var price = priceInput.value;
+            var quanity = quantityInput.value;
+            price = +price;
+            quanity = +quanity;
+            if (Number.isNaN(price) || Number.isNaN(quanity)) {
+            output.innerHTML = 'Invalid input';
+            return;
+            }
+            var totalPrice = price * quanity;
+            totalPrice = Math.round(totalPrice * 100) / 100;
+            output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice;
+        });
+        </script>
+    </body>
+</html>
