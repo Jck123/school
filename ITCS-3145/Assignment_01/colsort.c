@@ -26,7 +26,7 @@ int drive_sort(int argc, char* argv[])
                 char **fileArr = malloc(sizeof(char*) * arrSize);
                 char *line = malloc(128);
                 int numLines = 0;
-                if(fileArr == NULL) {
+                if(fileArr == NULL || line == NULL) {
                     fprintf(stderr, "Error: Malloc failed\n");
                     exit(1);
                 }
@@ -39,7 +39,7 @@ int drive_sort(int argc, char* argv[])
                             line[strlen(line)-1] = '\0';                        
                         if (numLines >= arrSize -1) {
                             arrSize += 10;
-                            fileArr = realloc(fileArr, arrSize);
+                            fileArr = realloc(fileArr, sizeof(char*) * arrSize);
                             if(fileArr == NULL) {
                                 fprintf(stderr, "Error: Malloc failed\n");
                                 exit(1);
@@ -74,7 +74,44 @@ int drive_sort(int argc, char* argv[])
                 fprintf(stderr, "Error: Cannot open file %s\n", argv[2]);
                 exit(1);
             } else {
-                //Add sorting code here
+                char **fileArr = malloc(sizeof(char*) * arrSize);
+                char *line = malloc(128);
+                int numLines = 0;
+                if(fileArr == NULL || line == NULL) {
+                    fprintf(stderr, "Error: Malloc failed\n");
+                    exit(1);
+                }
+                while(fgets(line, 128, input) != NULL) {
+                    if(line[strlen(line) - 1] != '\n' && !feof(input)) {
+                        fprintf(stderr, "Error: Line too long\n");
+                        exit(1);
+                    } else {
+                        if(line[strlen(line)-1] == '\n')
+                            line[strlen(line)-1] = '\0';                        
+                        if (numLines >= arrSize -1) {
+                            arrSize += 10;
+                            fileArr = realloc(fileArr, sizeof(char*) * arrSize);
+                            if(fileArr == NULL) {
+                                fprintf(stderr, "Error: Malloc failed\n");
+                                exit(1);
+                            }
+                        }
+                        fileArr[numLines] = line;
+                        fileArr[numLines] = realloc(fileArr[numLines], strlen(line));
+                        line = malloc(128);
+                        if(fileArr[numLines] == NULL || line == NULL) {
+                            fprintf(stderr, "Error: Malloc failed\n");
+                            exit(1);
+                        }
+                        numLines++;
+                    }
+                }
+                qsort(fileArr, numLines, sizeof(char*),strptrcmp);
+
+                for (int i = 0; i < numLines; i++) {
+                    printf("%s\n", fileArr[i]);
+                }
+                fclose(input);
             }
         } else {
             fprintf(stderr, "Error: Bad command line parameters\n");
