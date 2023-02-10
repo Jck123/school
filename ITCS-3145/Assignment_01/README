@@ -1,0 +1,9 @@
+This is colsort
+
+It takes an input file as per the user's request and sorts it line by line so that they're in alphabetical order. The user also can give it a number as it's first argument to sort it by that word in the line, count starts at 1. The output is printed to the console and the file is NOT changed. No lines over 128 characters or the program will fail
+
+The algorithm works in a way where it takes all the file input lines and does a simple qsort on them using a modified version of strcmp that can accept string pointer objects instead of strings themselves. The program also uses dynamic memory allocation to reduce wasted space by accepting the string at maximum needed memory, then reducing the memory size once the string has been saved into the string array.
+
+One last thing: It is currently 11:07 PM 3 days after this assignment was due and I couldn't for the life of me figure out how strlok works to benefit me in the next hour, so while the program does successfully accept numbers as an input, it doesn't do anything with them and sorts the file as if there were no number input.
+I severly underestimated how much time this would take, but to prevent myself from going from a maximum 92 to a maximum 84, I'm gonna hope that this program is worth enough to be worth over an 84.
+I may consider working on this further just for my own sake, but no promises.
