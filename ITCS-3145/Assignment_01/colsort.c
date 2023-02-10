@@ -31,11 +31,12 @@ int drive_sort(int argc, char* argv[])
                     exit(1);
                 }
                 while(fgets(line, 128, input) != NULL) {
-                    if(line[strlen(line) - 1] != '\n') {
+                    if(line[strlen(line) - 1] != '\n' && !feof(input)) {
                         fprintf(stderr, "Error: Line too long\n");
                         exit(1);
                     } else {
-                        line[strlen(line)-1] = '\0';                        
+                        if(line[strlen(line)-1] == '\n')
+                            line[strlen(line)-1] = '\0';                        
                         if (numLines >= arrSize -1) {
                             arrSize += 10;
                             fileArr = realloc(fileArr, arrSize);
@@ -60,6 +61,7 @@ int drive_sort(int argc, char* argv[])
                     printf("%s\n", fileArr[i]);
                 }
             }
+            fclose(input);
         } else {
             fprintf(stderr, "Error: Bad command line parameters\n");
             exit(1);
