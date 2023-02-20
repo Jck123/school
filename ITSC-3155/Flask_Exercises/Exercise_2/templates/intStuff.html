@@ -1,0 +1,29 @@
+<html>
+    <style>
+        p1 {color:purple}
+    </style>
+    <h1>Calculate</h1>
+    <p1 id="val"></p1>
+    <p2 id="middle">is</p2>
+    <p3 id="result"></p3>
+    <script>
+        window.onload = function() {
+            var userInput = document.location.href.split('=')[1]
+            var resultObject = document.getElementById("result")
+            document.getElementById("val").innerHTML = userInput
+            if (!userInput) {
+                document.getElementById("val").innerHTML = "No number provided!"
+                document.getElementById("middle").innerHTML = ""
+            } else if (/^\d+$/.test(userInput)) {
+                resultObject.style.color = "green"
+                if(parseInt(userInput) % 2 === 0)
+                    resultObject.innerHTML = "is even!"
+                else
+                    resultObject.innerHTML = "is odd!"
+            } else {
+                resultObject.style.color = "red"
+                resultObject.innerHTML = "is not an integer!"
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <style>
+        h1 {font-family: 'Courier New'; color:green}
+        p1 {font-family: 'Times New Roman';}
+        input {width: 50px;}
+    </style>
+    <div>
+    <h1>Home</h1>
+    <p1>Enter an integer to find out if it is even or odd</p1>
+    </div>
+    <div>
+        <p2>Number&#58;</p2>
+        <input type="text" id="val">
+        <button id="btn-submit">Submit</button>
+    </div>
+    <script>
+        var input = document.getElementById("val")
+        var btn = document.getElementById("btn-submit")
+
+        btn.addEventListener('click', function() {
+            var userInput = input.value;
+            window.location.replace("/process?val=" + userInput);
+        });
+    </script>
+</html>
