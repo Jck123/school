@@ -1,0 +1,29 @@
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <h1>Registered Students</h1>
+    <p>The following students have registered for student organizations</p>
+    <table>
+        <tbody>
+            <tr>
+                
+                <td><strong>Name &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</strong></td>
+                <td><strong>Organization</strong></td>
+                
+            </tr>
+            {% for name, org in registry.items() %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ org }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button id="btn-register">Register</button>
+    <script>
+        var regBtn = document.getElementById("btn-register")
+
+        regBtn.addEventListener('click', function() {
+            window.location.replace("/")
+        });
+    </script>
+</html>

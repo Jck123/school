@@ -1,0 +1,28 @@
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <h1>Register</h1>
+    <p1>Use the following form to register for a student organization</p1>
+    <form style="margin-top: 20px;" method="post">
+        <p><label for="name">Name</label></p>
+        <p><input type="text" name="name" placeholder="John Smith"></p>
+        <p><label for="org">Organization</label></p>
+        <p>
+            <select name="org">
+                <option value="GamingNetwork">GamingNetwork</option>
+                <option value="Debating4Lyfe">Debating4Lyfe</option>
+                <option value="MoviesNStuff">MoviesNStuff</option>
+                <option value="Nature">Nature</option>
+                <option value="Lawyers">Lawyers</option>
+            </select>
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+    <button id="btn-registry">Registry</button>
+    <script>
+        var regBtn = document.getElementById("btn-registry")
+
+        regBtn.addEventListener('click', function() {
+            window.location.replace("/registry")
+        });
+    </script>
+</html>
