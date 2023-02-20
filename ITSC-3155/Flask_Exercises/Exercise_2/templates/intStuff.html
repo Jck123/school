@@ -14,8 +14,8 @@
             if (!userInput) {
                 document.getElementById("val").innerHTML = "No number provided!"
                 document.getElementById("middle").innerHTML = ""
-            } else if (/^\d+$/.test(userInput)) {
-                resultObject.style.color = "green"
+            } else if (/^\d+$/.test(userInput)) {       //https://stackoverflow.com/questions/37674069/javascript-check-if-string-can-be-converted-to-integer
+                resultObject.style.color = "green"      //Used this to find out how to check if string is int
                 if(parseInt(userInput) % 2 === 0)
                     resultObject.innerHTML = "is even!"
                 else
