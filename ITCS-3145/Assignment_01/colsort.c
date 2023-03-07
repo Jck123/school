@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 199309L
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -28,11 +29,15 @@ int drive_sort(int argc, char* argv[])
                 int numLines = 0;
                 if(fileArr == NULL || line == NULL) {
                     fprintf(stderr, "Error: Malloc failed\n");
+                    free(fileArr);
+                    free(line);
                     exit(1);
                 }
                 while(fgets(line, 128, input) != NULL) {
                     if(line[strlen(line) - 1] != '\n' && !feof(input)) {
                         fprintf(stderr, "Error: Line too long\n");
+                        free(fileArr);
+                        free(line);
                         exit(1);
                     } else {
                         if(line[strlen(line)-1] == '\n')
@@ -42,6 +47,8 @@ int drive_sort(int argc, char* argv[])
                             fileArr = realloc(fileArr, sizeof(char*) * arrSize);
                             if(fileArr == NULL) {
                                 fprintf(stderr, "Error: Malloc failed\n");
+                                free(fileArr);
+                                free(line);
                                 exit(1);
                             }
                         }
@@ -50,6 +57,8 @@ int drive_sort(int argc, char* argv[])
                         line = malloc(128);
                         if(fileArr[numLines] == NULL || line == NULL) {
                             fprintf(stderr, "Error: Malloc failed\n");
+                            free(fileArr);
+                            free(line);
                             exit(1);
                         }
                         numLines++;
@@ -60,6 +69,8 @@ int drive_sort(int argc, char* argv[])
                 for (int i = 0; i < numLines; i++) {
                     printf("%s\n", fileArr[i]);
                 }
+                free(fileArr);
+                free(line);
             }
             fclose(input);
         } else {
@@ -79,11 +90,15 @@ int drive_sort(int argc, char* argv[])
                 int numLines = 0;
                 if(fileArr == NULL || line == NULL) {
                     fprintf(stderr, "Error: Malloc failed\n");
+                    free(fileArr);
+                    free(line);
                     exit(1);
                 }
                 while(fgets(line, 128, input) != NULL) {
                     if(line[strlen(line) - 1] != '\n' && !feof(input)) {
                         fprintf(stderr, "Error: Line too long\n");
+                        free(fileArr);
+                        free(line);
                         exit(1);
                     } else {
                         if(line[strlen(line)-1] == '\n')
@@ -93,6 +108,8 @@ int drive_sort(int argc, char* argv[])
                             fileArr = realloc(fileArr, sizeof(char*) * arrSize);
                             if(fileArr == NULL) {
                                 fprintf(stderr, "Error: Malloc failed\n");
+                                free(fileArr);
+                                free(line);
                                 exit(1);
                             }
                         }
@@ -101,6 +118,8 @@ int drive_sort(int argc, char* argv[])
                         line = malloc(128);
                         if(fileArr[numLines] == NULL || line == NULL) {
                             fprintf(stderr, "Error: Malloc failed\n");
+                            free(fileArr);
+                            free(line);
                             exit(1);
                         }
                         numLines++;
@@ -112,6 +131,9 @@ int drive_sort(int argc, char* argv[])
                     printf("%s\n", fileArr[i]);
                 }
                 fclose(input);
+
+                free(fileArr);
+                free(line);
             }
         } else {
             fprintf(stderr, "Error: Bad command line parameters\n");
