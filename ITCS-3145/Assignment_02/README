@@ -1,0 +1,13 @@
+Welcome to the minions program!
+
+This simple program makes use of multithreading to create
+as many minions as the user desires and prints out the
+thread id in the form of a minion number. After all
+minions have been created, the overlord will then be
+created in their own thread and will announce their
+presence.
+
+Usage: minions [int]
+
+Program created by James Kelly
+Class: ITCS-3145
