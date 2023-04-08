@@ -1,0 +1,16 @@
+Books/BramStoker-Dracula.txt
+Books/HGWells-TheWarOfTheWorlds.txt
+Books/JaneAusten-CompleteWorks.txt
+Books/EmilyBronte-WutheringHeights.txt
+Books/HarrietBeecherStowe-UncleTomsCabin.txt
+Books/MarkTwain-complete.txt
+Books/Shakespeare-complete.txt
+Books/TheKingJamesBible.txt
+Books/WinstonChurchill-CompleteWorks.txt
+Books/MaryShelley-Frankenstein.txt
+Books/ArthurConanDoyla-TheAdventuresOfSherlockHolmes.txt
+Books/WinstonChurchill-CompleteWorks.txt
+Books/LewisCarroll-AlicesAdventuresInWonderland.txt
+Books/HermanMelville-MobyDick.txt
+Books/LouisaMayAlcott-LittleWomen.txt
+Books/CharlesDickens-OliverTwist.txt
