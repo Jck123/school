@@ -1,0 +1,7 @@
+Sequential: 179.360190s
+
+This code is incomplete and does not compute the values properly.
+As of now, it only calculates random values as it can only see the a portion of the A array.
+It cannot see the entire portion of A that it needs to see.
+
+The code does properly make use of MPI_Scatter and MPI_Gather properly for arrays x and y
